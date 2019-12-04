@@ -7,29 +7,52 @@
 //
 
 import UIKit
+import CoreData
 
 class TasksTableViewController: UITableViewController {
     
+    //This is absurdly inefficient!!!
+    //The fetch reuest will be executed every time we access Tasks!
+    //We will fix this in a future class
+    private var tasks: [Task] {
+        let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
+        let moc = CoreDataStack.shared.mainContext
+        do{
+            return try moc.fetch(fetchRequest)
+        }catch {
+            print("Error fetching tasks: \(error)")
+            return []
+        }
+    }
     
     
-    
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
        
     }
+    
+    //MARK: Functions:
+    
+   
+    
 
     // MARK: - Table view data source
 
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return tasks.count
     }
-
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Task Cell", for: indexPath)
+        
+        let task = tasks[indexPath.row]
+        cell.textLabel?.text = task.name
+        return cell
+    }
     
 
 }

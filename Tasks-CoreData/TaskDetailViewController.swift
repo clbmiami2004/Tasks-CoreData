@@ -11,11 +11,28 @@ import UIKit
 class TaskDetailViewController: UIViewController {
     
     
+    var task: Task?
     
-    @IBOutlet weak var saveTask: UIBarButtonItem!
+    
+    @IBAction func saveTask(_ sender: UIBarButtonItem) {
+        guard let name = textField.text, !name.isEmpty else {return}
+        
+        let notes = notesTextView.text
+        
+        if let task = task {
+            //Editing an existing task
+            task.name = name
+            task.notes = notes
+        }else {
+            //Creating a new task
+            let _ = Task(name: name, notes: notes)
+        }
+    }
+    
     
     @IBOutlet weak var textField: UITextField!
     
+    @IBOutlet weak var notesTextView: UITextView!
     
     
     override func viewDidLoad() {
@@ -25,14 +42,12 @@ class TaskDetailViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func updateViews() {
+        guard isViewLoaded else {return}
+        
+        title = task?.name ?? "Create Task"
+        textField.text = task?.name
+        notesTextView.text = task?.notes
     }
-    */
 
 }

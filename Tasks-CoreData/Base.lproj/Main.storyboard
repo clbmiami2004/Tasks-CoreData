@@ -124,10 +124,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="w3d-EP-aIT">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="bkO-s8-5bz"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="bkO-s8-5bz">
+                            <connections>
+                                <action selector="saveTask:" destination="BYZ-38-t0r" id="cNm-N1-Dt5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="saveTask" destination="bkO-s8-5bz" id="TP5-xc-rRi"/>
+                        <outlet property="notesTextView" destination="sLU-3M-n81" id="txn-H5-osW"/>
                         <outlet property="textField" destination="dT5-JW-eKo" id="me9-Um-sYy"/>
                     </connections>
                 </viewController>

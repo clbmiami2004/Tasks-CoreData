@@ -16,6 +16,7 @@
 		9333A69F239759E3001412F6 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9333A69E239759E3001412F6 /* TasksTableViewController.swift */; };
 		9333A6A223975C64001412F6 /* Tasks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9333A6A023975C64001412F6 /* Tasks.xcdatamodeld */; };
 		9333A6A423976093001412F6 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9333A6A323976093001412F6 /* CoreDataStack.swift */; };
+		9333A6A623976A63001412F6 /* Task+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9333A6A523976A63001412F6 /* Task+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9333A69E239759E3001412F6 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 		9333A6A123975C64001412F6 /* Tasks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tasks.xcdatamodel; sourceTree = "<group>"; };
 		9333A6A323976093001412F6 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		9333A6A523976A63001412F6 /* Task+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				9333A68823975563001412F6 /* AppDelegate.swift */,
 				9333A68A23975563001412F6 /* SceneDelegate.swift */,
+				9333A6A523976A63001412F6 /* Task+Convenience.swift */,
 				9333A6A323976093001412F6 /* CoreDataStack.swift */,
 				9333A6A023975C64001412F6 /* Tasks.xcdatamodeld */,
 				9333A69E239759E3001412F6 /* TasksTableViewController.swift */,
@@ -150,6 +153,7 @@
 				9333A69D239759AD001412F6 /* TaskDetailViewController.swift in Sources */,
 				9333A68923975563001412F6 /* AppDelegate.swift in Sources */,
 				9333A6A223975C64001412F6 /* Tasks.xcdatamodeld in Sources */,
+				9333A6A623976A63001412F6 /* Task+Convenience.swift in Sources */,
 				9333A6A423976093001412F6 /* CoreDataStack.swift in Sources */,
 				9333A69F239759E3001412F6 /* TasksTableViewController.swift in Sources */,
 				9333A68B23975563001412F6 /* SceneDelegate.swift in Sources */,
