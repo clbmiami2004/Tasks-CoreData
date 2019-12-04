@@ -14,7 +14,7 @@ class TasksTableViewController: UITableViewController {
     //This is absurdly inefficient!!!
     //The fetch reuest will be executed every time we access Tasks!
     //We will fix this in a future class
-    private var tasks: [Task] {
+    var tasks: [Task] {
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
         let moc = CoreDataStack.shared.mainContext
         do{
@@ -26,13 +26,21 @@ class TasksTableViewController: UITableViewController {
     }
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        
+        tableView.reloadData()
     }
-    
-    //MARK: Functions:
+
+//MARK: Prepare for Segue:
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       if segue.identifier == "ShowTaskDetail" {
+           let detailVC = segue.destination as! TaskDetailViewController
+           if let indexPath = tableView.indexPathForSelectedRow {
+               detailVC.task = tasks[indexPath.row]
+           }
+       }
+   }
     
     
     
@@ -47,7 +55,7 @@ class TasksTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Task Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
         
         let task = tasks[indexPath.row]
         cell.textLabel?.text = task.name

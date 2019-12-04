@@ -11,8 +11,16 @@ import UIKit
 class TaskDetailViewController: UIViewController {
     
     
-    var task: Task?
+    var task: Task? {
+        didSet {
+            updateViews()
+        }
+    }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateViews()
+    }
     
     @IBAction func saveTask(_ sender: UIBarButtonItem) {
         guard let name = textField.text, !name.isEmpty else {return}
@@ -40,26 +48,20 @@ class TaskDetailViewController: UIViewController {
     
     
     @IBOutlet weak var textField: UITextField!
-    
     @IBOutlet weak var notesTextView: UITextView!
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        updateViews()
-    }
+    
+    
     
 //MARK: Functions:
     
-    
     private func updateViews() {
-        guard isViewLoaded else {return}
-        
-        title = task?.name ?? "Create Task"
-        textField.text = task?.name
-        notesTextView.text = task?.notes
-    }
+           guard isViewLoaded else {return}
+           
+           title = task?.name ?? "Create Task"
+           textField.text = task?.name
+           notesTextView.text = task?.notes
+       }
     
-    
-
 }
