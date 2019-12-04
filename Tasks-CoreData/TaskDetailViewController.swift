@@ -27,6 +27,15 @@ class TaskDetailViewController: UIViewController {
             //Creating a new task
             let _ = Task(name: name, notes: notes)
         }
+        
+        do {
+            let moc = CoreDataStack.shared.mainContext
+            try moc.save()
+        }catch {
+            print("Error saving managed object context: \(error)")
+        }
+        
+        navigationController?.popViewController(animated: true)
     }
     
     
@@ -37,11 +46,12 @@ class TaskDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateViews()
     }
     
-
+//MARK: Functions:
+    
+    
     private func updateViews() {
         guard isViewLoaded else {return}
         
@@ -49,5 +59,7 @@ class TaskDetailViewController: UIViewController {
         textField.text = task?.name
         notesTextView.text = task?.notes
     }
+    
+    
 
 }

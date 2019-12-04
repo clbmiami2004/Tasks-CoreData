@@ -28,19 +28,19 @@ class TasksTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        
+        
     }
     
     //MARK: Functions:
     
-   
     
-
+    
+    
     // MARK: - Table view data source
-
-
-
+    
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
     }
@@ -54,5 +54,19 @@ class TasksTableViewController: UITableViewController {
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let task = tasks[indexPath.row]
+            let moc = CoreDataStack.shared.mainContext
+            moc.delete(task)
+            
+            do {
+                try moc.save()
+                tableView.reloadData()
+            }catch {
+                moc.reset()
+                print("Error saving managed object context: \(error)")
+            }
+        }
+    }
 }
