@@ -73,7 +73,7 @@
         <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TasksTableViewController" customModule="Tasks_CoreData" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TaskDetailViewController" customModule="Tasks_CoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,16 +84,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mg0-yV-nFS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mg0-yV-nFS">
                                 <rect key="frame" x="20" y="204" width="80" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sLU-3M-n81">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sLU-3M-n81">
                                 <rect key="frame" x="20" y="261" width="374" height="601"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -108,19 +106,30 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sLU-3M-n81" secondAttribute="trailing" constant="20" id="2ni-OE-CCj"/>
+                            <constraint firstItem="sLU-3M-n81" firstAttribute="top" secondItem="mg0-yV-nFS" secondAttribute="bottom" constant="23" id="5jz-7v-qKi"/>
+                            <constraint firstItem="mg0-yV-nFS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="FOB-rw-sBz"/>
                             <constraint firstItem="dT5-JW-eKo" firstAttribute="leading" secondItem="ec3-rW-nvS" secondAttribute="trailing" constant="8" id="IdL-fe-DCt"/>
                             <constraint firstItem="dT5-JW-eKo" firstAttribute="leading" secondItem="ec3-rW-nvS" secondAttribute="trailing" constant="8" id="MU9-44-HHY"/>
                             <constraint firstItem="ec3-rW-nvS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QjJ-Iu-N3r"/>
+                            <constraint firstItem="sLU-3M-n81" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cwu-Wg-5OM"/>
                             <constraint firstItem="ec3-rW-nvS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="mYc-zT-L4d"/>
                             <constraint firstItem="dT5-JW-eKo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="naX-Jd-9MF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mg0-yV-nFS" secondAttribute="trailing" constant="314" id="pHr-FZ-Yf5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dT5-JW-eKo" secondAttribute="trailing" constant="20" id="qa8-rb-7hc"/>
                             <constraint firstItem="dT5-JW-eKo" firstAttribute="leading" secondItem="ec3-rW-nvS" secondAttribute="trailing" constant="8" id="sPM-GG-8o5"/>
+                            <constraint firstItem="sLU-3M-n81" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="seo-UT-FNe"/>
+                            <constraint firstItem="mg0-yV-nFS" firstAttribute="top" secondItem="ec3-rW-nvS" secondAttribute="bottom" constant="8" id="tGG-Ob-GPA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="w3d-EP-aIT">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="bkO-s8-5bz"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="saveTask" destination="bkO-s8-5bz" id="TP5-xc-rRi"/>
+                        <outlet property="textField" destination="dT5-JW-eKo" id="me9-Um-sYy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

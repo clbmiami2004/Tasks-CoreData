@@ -9,7 +9,15 @@
 import UIKit
 
 class TaskDetailViewController: UIViewController {
-
+    
+    
+    
+    @IBOutlet weak var saveTask: UIBarButtonItem!
+    
+    @IBOutlet weak var textField: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
