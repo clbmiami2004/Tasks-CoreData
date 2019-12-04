@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		9333A68923975563001412F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9333A68823975563001412F6 /* AppDelegate.swift */; };
 		9333A68B23975563001412F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9333A68A23975563001412F6 /* SceneDelegate.swift */; };
-		9333A68D23975563001412F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9333A68C23975563001412F6 /* ViewController.swift */; };
 		9333A69023975563001412F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9333A68E23975563001412F6 /* Main.storyboard */; };
 		9333A69223975566001412F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9333A69123975566001412F6 /* Assets.xcassets */; };
 		9333A69523975566001412F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9333A69323975566001412F6 /* LaunchScreen.storyboard */; };
+		9333A69D239759AD001412F6 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9333A69C239759AD001412F6 /* TaskDetailViewController.swift */; };
+		9333A69F239759E3001412F6 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9333A69E239759E3001412F6 /* TasksTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9333A68523975563001412F6 /* Tasks-CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tasks-CoreData.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9333A68823975563001412F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9333A68A23975563001412F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9333A68C23975563001412F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9333A68F23975563001412F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9333A69123975566001412F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9333A69423975566001412F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9333A69623975566001412F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9333A69C239759AD001412F6 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		9333A69E239759E3001412F6 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				9333A68823975563001412F6 /* AppDelegate.swift */,
 				9333A68A23975563001412F6 /* SceneDelegate.swift */,
-				9333A68C23975563001412F6 /* ViewController.swift */,
+				9333A69E239759E3001412F6 /* TasksTableViewController.swift */,
+				9333A69C239759AD001412F6 /* TaskDetailViewController.swift */,
 				9333A68E23975563001412F6 /* Main.storyboard */,
 				9333A69123975566001412F6 /* Assets.xcassets */,
 				9333A69323975566001412F6 /* LaunchScreen.storyboard */,
@@ -138,8 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9333A68D23975563001412F6 /* ViewController.swift in Sources */,
+				9333A69D239759AD001412F6 /* TaskDetailViewController.swift in Sources */,
 				9333A68923975563001412F6 /* AppDelegate.swift in Sources */,
+				9333A69F239759E3001412F6 /* TasksTableViewController.swift in Sources */,
 				9333A68B23975563001412F6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
